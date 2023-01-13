@@ -145,7 +145,7 @@ def test_auth_invalid_data_phone(open_chrome):
     assert error.text == 'Неверный логин или пароль'
 
 def test_auth_valid_data_phone(open_chrome):
-    phone = '9373289728'
+    phone = '9991234567'
     password = '123456789oO'
     phone_field = WebDriverWait(pytest.driver, 10).until(
         EC.presence_of_element_located((By.ID, 'username')))
@@ -312,7 +312,7 @@ def test_auth_time_code_mail(open_chrome,get_lk):
     assert url!=redirect_url
     assert new_form.text == 'Код подтверждения отправлен'
 def test_auth_time_code_phone(open_chrome,get_lk):
-    phone='+79373289728'
+    phone='+79991234567'
     username=WebDriverWait(pytest.driver, 15).until(
         EC.presence_of_element_located((By.XPATH,"//h2[@class='sc-bvFjSx iqOiiv']")))
     username.click()
@@ -359,7 +359,7 @@ def test_auth_time_code_invalid_phone(open_chrome, get_lk):
     assert error.text=='Введите телефон в формате +7ХХХХХХХХХХ или +375XXXXXXXXX, или email в формате example@email.ru'
 
 def test_auth_time_invalid_code(open_chrome,get_lk):
-    phone='+79373289728'
+    phone='+79991234567'
     username=WebDriverWait(pytest.driver, 15).until(
         EC.presence_of_element_located((By.XPATH,"//h2[@class='sc-bvFjSx iqOiiv']")))
     username.click()
